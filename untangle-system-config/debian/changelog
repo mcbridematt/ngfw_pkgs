@@ -1,3 +1,9 @@
+untangle-system-config (6.1) UNRELEASED; urgency=medium
+
+  * Traverse bump 
+
+ -- Mathew McBride <matt@traverse.com.au>  Thu, 02 Nov 2017 00:59:40 +0000
+
 untangle-system-config (6.0.0~svn20080915r18855trunk+seb20081003T101049-1lenny) seb; urgency=low
 
   * auto build
