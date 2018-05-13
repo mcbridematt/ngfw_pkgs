@@ -2,12 +2,7 @@ build_arm64:
         image: registry.gitlab.com/matt_traverse/debian-build-container:aarch64
         tags: ["arm64"]
         script: 
-          - su build
-          - git clone https://github.com/untangle/ngfw_upstream
-          - ./traverse-build.sh
-          - mkdir -p repo/conf
-          - cp _repoconf repo/conf/distributions
-          - reprepro -b repo includedeb stretch *.deb
+          - su build ./traverse-build.sh
           - ./traverse-upload.sh
         artifacts:
           paths:
