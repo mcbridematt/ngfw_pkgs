@@ -7,6 +7,7 @@ build_arm64:
           - mkdir -p repo/conf
           - cp _repoconf repo/conf/distributions
           - reprepro -b repo includedeb stretch *.deb
+          - ./traverse-upload.sh
         artifacts:
           paths:
             - repo
