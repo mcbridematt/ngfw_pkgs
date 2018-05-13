@@ -29,7 +29,10 @@ for i in $(cat traverse-build-order.txt | awk '{{print $1}}'); do
 	echo
 	echo
 done
-reprepro -b repo includedeb stretch *.deb
+echo "Adding debs to repo"
+cd "${THIS_DIR}"
+reprepro -b "${THIS_DIR}/repo" includedeb stretch ${THIS_DIR}/*.deb
+du -h repo 
 
 cd "${THIS_DIR}/ngfw_upstream"
 sed -i 's/iptables-1.6.0/iptables-1.6.0+snapshot20161117-6traverse/g' build-order.txt
