@@ -18,6 +18,17 @@ mv ../iptables_1.6.0+snapshot20161117.orig.tar.bz2 ../iptables_1.6.0+snapshot201
 dch -l traverse-ut  "apply untangle IMQ patch"
 
 cd "${THIS_DIR}"
+cd ngfw_upstream/libnetfilter-queue
+mv libnetfilter-queue-1.0.2/ libnetfilter-queue-untangle
+apt-get source libnetfilter-queue
+cd libnetfilter-queue-1.0.2/
+cp -r ../libnetfilter-queue-untangle/upstream-patches debian/patches
+dch -l traverse-ut  "apply untangle NFQA patch"
+cd ..
+mv libnetfilter-queue_1.0.2.orig.tar.bz2 libnetfilter-queue_1.0.2-2traverse.orig.tar.bz2
+
+
+cd "${THIS_DIR}"
 
 for i in $(cat traverse-build-order.txt | awk '{{print $1}}'); do
 	echo "Building $i"
@@ -36,6 +47,7 @@ du -h repo
 
 cd "${THIS_DIR}/ngfw_upstream"
 sed -i 's/iptables-1.6.0/iptables-1.6.0+snapshot20161117-6traverse/g' build-order.txt
+sed -i 's/libnetfilter-queue-1.0.2/libnetfilter-queue-1.0.2-2traverse/g' build-order.txt
 
 for i in $(cat build-order.txt | grep -v '#' | grep -v '^\$' | awk '{{print $1}}'); do
 	echo "Building upstream $i"
