@@ -1,3 +1,5 @@
+untangle-pyconnector			stretch
+untangle-root				stretch
 untangle-database-config		jessie,stretch
 untangle-lxc-client			jessie,stretch
 untangle-hardware-turris-omnia		jessie,stretch
@@ -21,11 +23,13 @@ untangle-hardware-config                jessie,stretch
 untangle-kiosk                          jessie,stretch
 untangle-linux-config                   jessie,stretch
 untangle-exim4-config                   jessie,stretch
+untangle-softflowd-config		stretch
 untangle-snmpd-config                   jessie,stretch
 untangle-snort-config                   jessie,stretch
 untangle-spamassassin-update            jessie,stretch
 untangle-system-config                  jessie,stretch
 untangle-apache2-config                 jessie,stretch
 untangle-netd			     	jessie,stretch
+untangle-sync-settings			stretch
 untangle-nflogd			     	jessie,stretch
 untangle-geoip-database                 jessie,stretch
