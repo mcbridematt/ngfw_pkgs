@@ -8,11 +8,7 @@ Standards-Version: 3.8.0
 
 Package: untangle-system-config
 Architecture: all
-<<<<<<< HEAD
 Depends: systemd, debconf, untangle-vm, irqbalance
-=======
-Depends: debconf, irqbalance, openssh-server
->>>>>>> Bump a couple of package versions up to expected values
 Description: The Untangle system config
  The Untangle system configurator.  Top level configurations not belonging in
  a more specific configurator are here.  Also if this package is present at
