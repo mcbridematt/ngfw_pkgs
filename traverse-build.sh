@@ -54,7 +54,7 @@ for i in $(cat build-order.txt | grep -v '#' | grep -v '^\$' | awk '{{print $1}}
 	echo
 	echo
 	cd "${THIS_DIR}/ngfw_upstream/${i}"
-	dpkg-buildpackage
+	dpkg-buildpackage -b -us -uc
 	cd ..
 	reprepro -b "${THIS_DIR}/repo" includedeb stretch *.deb
 	echo "DONE $i"
