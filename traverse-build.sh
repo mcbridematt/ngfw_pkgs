@@ -57,6 +57,7 @@ for i in $(cat build-order.txt | grep -v '#' | grep -v '^\$' | awk '{{print $1}}
 	dpkg-buildpackage -b -us -uc
 	cd ..
 	reprepro -b "${THIS_DIR}/repo" includedeb stretch *.deb
+	sudo dpkg -i lib*.deb
 	echo "DONE $i"
 	echo
 	echo
