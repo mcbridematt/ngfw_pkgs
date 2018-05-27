@@ -4,10 +4,8 @@ THIS_DIR=$(pwd)
 mkdir -p repo/conf
 cp _repoconf repo/conf/distributions
 
+rm -rf ngfw_upstream
 git clone --branch fix_snort https://github.com/mcbridematt/ngfw_upstream
-
-# Do some setup for the modified 'upstream' packages
-curl https://files.pythonhosted.org/packages/39/51/fc4d3cdcf8f46509887d8771ce18ca6cfafd1d02eb429d69da95866a0b5e/javalang-0.11.0.tar.gz -o ngfw_upstream/python-javalang/javalang_0.11.0.orig.tar.gz
 
 cd ngfw_upstream/iptables/
 apt-get source iptables
