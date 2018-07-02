@@ -1,0 +1,6 @@
+Origin: untangle-build
+Label: untangle-arm64-build
+Codename: stretch
+Architectures: arm64
+Components: main
+Description: Untangle for ARM64
