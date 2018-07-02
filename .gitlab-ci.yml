@@ -1,0 +1,9 @@
+build_arm64:
+        image: registry.gitlab.com/matt_traverse/debian-build-container:aarch64
+        tags: ["arm64"]
+        script: 
+          - su build ./traverse-build.sh
+          - ./traverse-upload.sh
+        artifacts:
+          paths:
+            - repo
